@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1725960194 source:c:\users\youcode\desktop\test\day\min projet\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725884984 c:\users\youcode\desktop\test\day\min projet\function.h
+

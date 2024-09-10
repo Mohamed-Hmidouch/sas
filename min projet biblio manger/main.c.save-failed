@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "function.h"
+struct informations{
+   int quantite;
+   float prix;
+   char titre[15],auteur[15];
+};
+int main()
+{
+  struct informations book[100];
+  int options,i,nbr_livr;
+
+
+  do{
+  printf("--------------------------------\n");
+  printf("-1 ajouter un livre.\n");
+  printf("2-Afficher tous les livres disponibles.\n");
+  printf("3-Rechercher un livre par son titre.\n");
+  printf("4-Mettre a jour la quantiter d'un livre.\n");
+  printf("5-Supprimer un livre du stock.\n");
+  printf("6-Afficher le nombre total de livres en stock.\n");
+  printf("7-sortier de programme.\n");
+  printf("--------------------------------\n");
+  printf("entrer votre choix : ");
+  scanf("%d",&options);
+  /////////////////////////////////////////////////////////
+   switch(options){
+   case 1 : printf("combien de livre vous voulez ajouter :");
+            scanf("%d",&nbr_livr);
+            for(i=0;i<nbr_livr;i++){
+            printf("--------------------------------\n");
+            printf("ajouter les informations du livre [%d] :\n",i+1);
+            printf("ajouter le titre du livre :");
+            scanf(" %[^\n]s",&book[i].titre);
+            printf("ajouter l'auteur du livre : ");
+            scanf(" %[^\n]s",&book[i].auteur);
+            printf("ajouter le prix du livre : ");
+            scanf(" %[^\n].2f",&book[i].prix);
+            printf("ajouter la quantite du livre :");
+            scanf(" %[^\n]d",&book[i].quantite);
+            };
+            printf("--------------------------------\n");
+    break;
+     /*       printf(" \n le titre  de ce livre est  :%s",book[i].titre);
+            printf(" \n l'auteur  de ce livre est  :%s",book[i].auteur);
+            printf(" \n le prix  de ce livre est  :%.2f",book[i].prix);
+            printf(" \n la quantite  de ce livre est  :%d",book[i].quantite);*/
+    case 2 : for(i=0;i<nbr_livr;i++){
+             printf("livre [%d] est : \n",i+1);
+             printf("le titre de livre : %s \n le nom d'auteur %s \n le prix %.2f \n la quantite est %d \n ",book[i].titre,book[i].auteur,book[i].prix,book[i].quantite);
+
+    }
+
+
+  }
+  }while(options != 7);
+
+
+
+
+
+    return 0;
+}
